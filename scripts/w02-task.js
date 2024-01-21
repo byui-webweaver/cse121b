@@ -28,7 +28,7 @@ multi-line strings, string interpolation with embedded
 expressions, and special constructs called tagged templates. */
 nameElement.innerHTML = `<strong>${fullName}</strong>`;
 
-yearElement.textContent = currentYear;
+//yearElement.textContent = currentYear;
 imageElement.setAttribute('src',profilePicture);
 //Need to check this one.I am not sure correct//
 imageElement.setAttribute('alt', `Profile image of ${fullName}.`);
