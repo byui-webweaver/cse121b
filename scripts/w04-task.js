@@ -1,9 +1,12 @@
-/* LESSON 3 - Programming Tasks */
+/* LESSON 4 - Programming Tasks */
 
 /* Profile Object  */
 let myProfile = {
     name: "Julie Eakins",
-    photo: "images/myPhoto.png",
+    photo: {
+        src: "images/myPhoto.png",
+        alt: "Profile Picture"
+    },
     favoriteFoods: [
         "Cookies",
         "Donuts",
@@ -17,29 +20,30 @@ let myProfile = {
         "Pencil Drawing"
     ],
 
-    placesLived: []
+    placesLived: {
+        place: [
+            "California",
+            "Arizona",
+            "Texas"
+        ],
+        
+        length: [
+            "21 years",
+            "8 years",
+            "11 years" 
+         ]
+    },   
+    
+
 };
 
 
 
 /* Populate Profile Object with placesLive objects */
 
-myProfile.placesLived.push = {
-    place: [
-        "California",
-        "Arizona",
-        "Texas",
-        "Utah"
-    ],
-
-    length: [
-        "21 years",
-        "8 years",
-        "11 years",
-        "10 years"
-    ]
-
-};
+myProfile.placesLived.place.push("Utah");
+myProfile.placesLived.length.push("10 years");  
+  
 
 
 /* DOM Manipulation - Output */
@@ -51,7 +55,8 @@ document.querySelector("#name").textContent = myProfile.name;
 /* Photo with attributes */
 
 //Assign the value of the photo property as the src attribute of the MTML with id= photo//
-document.querySelector("#photo").src = myProfile.photo;
+document.querySelector("#photo").src = myProfile.photo.src;
+
 
 //Assign the value of the name property as the alt attribute of the HTML with id= photo//
 document.querySelector("#photo").alt = myProfile.name;
@@ -76,35 +81,34 @@ myProfile.favoriteFoods.forEach(food => {
 /* Hobbies List */
 myProfile.hobbies.forEach(hobby => {
     // Create a new li element
-    let li = document.createElement("li");
+    let liElement = document.createElement("li");
 
     // Set the text content of the li element
-    li.textContent = hobby;
+    liElement.textContent = hobby;
 
     // Append the li element with content as a child of the HTML
-    document.querySelector("#hobbies").appendChild(li);
-})
+    document.querySelector("#hobbies").appendChild(liElement);
+});
 
 /* Places Lived DataList */
 
-// Iterate placesLived array using forEach
-myProfile.placesLived.forEach(place => {
-    // Create a new dt element
-    let dt = document.createElement("dt");
 
-    // Set the text content of the dt element to the current place
-    dt.textContent = place.place;
+// Access the 'place' and 'length' arrays 
+const places = myProfile.placesLived.place;
+const lengths = myProfile.placesLived.length;
 
-    // Create a new dd element
-    let dd = document.createElement("dd");
+// Iterate over the places array using forEach
+places.forEach((place, index) => {
+    // Create an HTML <dt> element and put its place property in the <dt> element
+    let dtElement = document.createElement("dt");
+    dtElement.textContent = place;
 
-    // Set the text content of the dd element to the length property
-    dd.textContent = place.length;
+    // Create an HTML <dd> element and put its length property in the <dd> element
+    let ddElement = document.createElement("dd");
+    ddElement.textContent = lengths[index];
 
-    // Append the dt and dd elements to the dl element
-    document.querySelector("#places-lived").appendChild(dt);
-    document.querySelector("#places-lived").appendChild(dd);
-   
+    // Append the HTML <dt> and <dd> elements to the HTML <dl> element with an ID of places-lived
+    document.querySelector("#places-lived").appendChild(dtElement);
+    document.querySelector("#places-lived").appendChild(ddElement);
 });
-
 
