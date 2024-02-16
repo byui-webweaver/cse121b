@@ -6,14 +6,17 @@
 /*Step 2 - Variables */
 const fullName = "Julie Eakins";
 const currentYear = new Date().getFullYear();
+
 //Holds the location of the image-matches image//
 const profilePicture = "images/myPhoto.png";
+
 /* The getElementById() method of the Document 
 interface returns an Element object representing 
 the element whose id property matches the specified string 
 aka 'name, 'food.*/
 const nameElement = document.getElementById("name");
 const foodElement = document.getElementById("food");
+
 /*The Document method querySelector() returns the first
  Element within the document that matches the specified
  selector, or group of selectors.

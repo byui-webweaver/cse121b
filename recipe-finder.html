@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Recipes</title>
+  <link rel="stylesheet" type="text/css" href="styles/recipe.css">
+</head> 
+<body>
+
+<div class="container">
+  <h1>Recipe Finder</h1>
+  <p>Select an option to find recipes:</p>
+  <form id="recipeForm">
+    <div class="form-group">
+      <select id="recipeOptions">
+        <option value="all">All Recipes</option>
+        <option value="gluten-free">Gluten-Free Recipes</option>
+       
+      </select>
+      
+    </div>
+  </form>
+  <ul class="recipes" id="recipeList">
+    <!-- Recipes will be dynamically added here -->
+  </ul>
+</div>
+
+<script src="scripts/recipe.js" defer></script>
+
+</body>
+</html>

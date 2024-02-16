@@ -12,7 +12,7 @@ const displayTemples = (temples) => {
         //create <h3> element
         const h3 = document.createElement("h3");
         h3.textContent = temple.templeName; //add templeName to new element
-        
+
         //create HTML <img> element
         const img = document.createElement("img");
         img.src = temple.imageUrl; //add imageUrl property to the src attribute
@@ -24,7 +24,7 @@ const displayTemples = (temples) => {
 
         //append <article> element to global templesElement variable
         templesElement.appendChild(article);
-});
+    });
 };
 
 /* async displayTemples Function */
@@ -41,7 +41,7 @@ const getTemples = async () => {
     //call the displayTemples function and pass to templeList
     displayTemples(templeList);
     //console.log(templeList);
-  
+
 };
 
 /* reset Function */
@@ -52,7 +52,7 @@ function reset() {
 /* filterTemples Function */
 function sortBy(temples) {
     //call reset function
-    reset ();
+    reset();
     //define variable named filter that obtains "filtered" id from HTML
     let filter = document.getElementById("filtered").value;//use .value to properly call from in HTML
     //use switch statement with filter value 
@@ -60,7 +60,7 @@ function sortBy(temples) {
         case "utah":
             displayTemples(temples.filter(temple => temple.location.includes("Utah")));
             break;
-        case "nonutah":
+        case "notutah":
             displayTemples(temples.filter(temple => !temple.location.includes("Utah")));
             break;
         case "older":
@@ -74,7 +74,7 @@ function sortBy(temples) {
     }
 };
 
-document.querySelector("#filtered").addEventListener("change", () => {sortBy(templeList)});
+document.querySelector("#filtered").addEventListener("change", () => { sortBy(templeList) });
 
 
 getTemples();
