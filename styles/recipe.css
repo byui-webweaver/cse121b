@@ -6,7 +6,7 @@ body {
   }
   
   #recipeOptions {
-    width: 230px; /* Adjust the width as needed */
+    width: 300px; /* Adjust the width as needed */
     padding: 10px; /* Add padding for better spacing */
     font-size: 16px; /* Adjust font size */
     border: 2px solid #ccc; /* Add a border */
@@ -58,3 +58,9 @@ body {
     padding: 10px;
     margin-bottom: 10px;
   }
+
+  .image-container,
+.link-container {
+  display: block; /* Make the containers block-level elements */
+  margin-top: 10px; /* Adjust the spacing between the image and the link */
+}
